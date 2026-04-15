@@ -1,0 +1,19 @@
+import psycopg
+from psycopg.rows import dict_row
+
+
+# estas credenciales deberian ser trabajadas como variables de entorno
+
+DB_CONFIG = {
+    "host": "localhost",
+    "dbname": "postgres",
+    "user": "postgres",
+    "password": "fernet2020",
+    "port": "5432",
+    "options": "-c search_path=little_tribu,public"
+}
+
+
+
+def get_connection():
+    return psycopg.connect(**DB_CONFIG, row_factory=dict_row)
