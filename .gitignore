@@ -9,6 +9,7 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+package-lock.json
 
 # testing
 /coverage
@@ -45,6 +46,8 @@ next-env.d.ts
 __pycache__/
 *.py[cod]
 *$py.class
+frontend/node_modules
+frontend/.next
 
 # C extensions
 *.so
