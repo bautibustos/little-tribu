@@ -1,8 +1,13 @@
 ## cosas para hacer:
     - Registrar en el archivo .env el certificado OpenSSL
+    - integracion con arca
+    - json para los productos   
+
 
 token de base de datos text o varchar de 2000 caracteres
 sing text o varchar 512
+{ params: {slug} }: { params: { slug: string } }
+
 
 ### Uso del OTP
 Una vez dentro del olvide mi contraseña y colocado el mail, dentro de la consola del servidor de python se mostrara el codigo OTP junto al mail y un TempStamp ``` {'admin@test.com': {'code': ** 276561 **, 'time': 1775612183.2673972}} ``` 
