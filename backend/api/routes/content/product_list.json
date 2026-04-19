@@ -1,0 +1,44 @@
+{
+    "0": {
+        "nombre_producto": "test",
+        "nombre_imagen": "url_imagen",
+        "precio": 1.5,
+        "descripcion": "esto es un producto de prueba"
+    },
+    "1": {
+        "nombre_producto": "test",
+        "nombre_imagen": "url_imagen",
+        "precio": 1.5,
+        "descripcion": "esto es un producto de prueba"
+    },
+    "2": {
+        "nombre_producto": "costilla",
+        "nombre_imagen": "imagennueva",
+        "precio": 2.5,
+        "descripcion": "esto es una descripcion"
+    },
+    "3": {
+        "nombre_producto": "costilla",
+        "nombre_imagen": "imagennueva",
+        "precio": 2.5,
+        "descripcion": "esto es una descripcion"
+    },
+    "4": {
+        "nombre_producto": "costilla",
+        "nombre_imagen": "imagennueva",
+        "precio": 2.5,
+        "descripcion": "esto es una descripcion"
+    },
+    "5": {
+        "nombre_producto": "costilla",
+        "nombre_imagen": "imagennueva",
+        "precio": 2.5,
+        "descripcion": "esto es una descripcion"
+    },
+    "6": {
+        "nombre_producto": "costilla",
+        "nombre_imagen": "imagennueva",
+        "precio": 2.5,
+        "descripcion": "esto es una descripcion"
+    }
+}
