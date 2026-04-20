@@ -1,16 +1,18 @@
-from fastapi import APIRouter, HTTPException, Response
-#from backend.api.schemas.product import Product
+from fastapi import APIRouter, Response
+from fastapi.responses import JSONResponse  
 import os, json
 
-#router = APIRouter()
+router = APIRouter()
 
-class Producto():
-    nombre_producto: str
-    nombre_imagen: str
+class Product():
+    slug_product: int    
+    name_product: str
+    img: str
     precio: float 
-    descripcion: str
+    description: str
 
-    def nuevo(self, nombre_producto, nombre_imagen, precio, descripcion):
+
+    def nuevo(self, name_product, img, precio, description):
         with open("product_list.json", "r") as file:
             datos_old = json.load(file)
         # leo cual es el ultimo el item del diccionario lo paso a entero y le sumo uno    
@@ -18,27 +20,34 @@ class Producto():
         
         # genero y cargo el nuevo item
         datos_old[ultimo_item]={
-            "nombre_producto":nombre_producto,
-            "nombre_imagen":nombre_imagen,
+            "name_product":name_product,
+            "img":img,
             "precio":precio,
-            "descripcion": descripcion   
+            "description": description   
         }
         # actualizo el archivo
         with open("product_list.json", "w") as file:
             json.dump(datos_old, file, indent=4)
     
+    @staticmethod 
     def listados():
-        with open("product_list.json", "r") as file:
-            datos_old = json.load(file)
+        with open("backend\\api\\routes\\content\\product_list.json", "r") as file:
+            listado = json.load(file)
+        return JSONResponse(status_code=200, content=listado)
+
+
+@router.get("/product-list")
+def post_products():
+    return Product.listados()
 
 if __name__ == "__main__":
-    p = Producto() 
+    p = Product() 
     
     p.nuevo(
-        nombre_producto="costilla",
-        nombre_imagen="imagennueva", 
+        name_product="costilla",
+        img="imagennueva", 
         precio=2.5, 
-        descripcion="esto es una descripcion"
+        description="esto es una description"
     )
 
-    print(Producto.listados())
+    print(p.listados())

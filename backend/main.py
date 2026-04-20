@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from api.routes.login.users import router as users_router
 from api.routes.login.recovery import router as recovery_router
-
+from api.routes.content.products import router as products 
 
 app = FastAPI()
 
@@ -24,6 +24,7 @@ app.add_middleware(
 # definicion de nueva ruta dentro de la api
 app.include_router(users_router, prefix="/api/login")
 app.include_router(recovery_router, prefix="/api/recovery")
+app.include_router(products, prefix="/api")
 
 
 """

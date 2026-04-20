@@ -22,23 +22,5 @@
         "nombre_imagen": "imagennueva",
         "precio": 2.5,
         "descripcion": "esto es una descripcion"
-    },
-    "4": {
-        "nombre_producto": "costilla",
-        "nombre_imagen": "imagennueva",
-        "precio": 2.5,
-        "descripcion": "esto es una descripcion"
-    },
-    "5": {
-        "nombre_producto": "costilla",
-        "nombre_imagen": "imagennueva",
-        "precio": 2.5,
-        "descripcion": "esto es una descripcion"
-    },
-    "6": {
-        "nombre_producto": "costilla",
-        "nombre_imagen": "imagennueva",
-        "precio": 2.5,
-        "descripcion": "esto es una descripcion"
     }
 }
