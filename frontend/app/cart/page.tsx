@@ -6,20 +6,20 @@ import { CartItem } from "@/interfaces/Product";
 const initialCart: CartItem[] = [
   {
     product: {
-      id: 1,
-      name: "Remera básica blanca",
-      price: 12999,
-      image: "https://placehold.co/100x100",
+      slug_product: 1,
+      name_product: "Remera básica blanca",
+      precio: 12999,
+      img: "https://placehold.co/100x100",
       description: "Remera de algodón 100%",
     },
     quantity: 2,
   },
   {
     product: {
-      id: 2,
-      name: "Jean slim negro",
-      price: 24999,
-      image: "https://placehold.co/100x100",
+      slug_product: 2,
+      name_product: "Jean slim negro",
+      precio: 24999,
+      img: "https://placehold.co/100x100",
       description: "Jean de corte slim fit",
     },
     quantity: 1,
@@ -29,10 +29,10 @@ const initialCart: CartItem[] = [
 export default function Cart() {
   const [cart, setCart] = useState<CartItem[]>(initialCart);
 
-  const total = cart.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
+  const total = cart.reduce((acc, item) => acc + item.product.precio * item.quantity, 0);
 
   const removeItem = (id: number) => {
-    setCart(cart.filter((item) => item.product.id !== id));
+    setCart(cart.filter((item) => item.product.slug_product !== id));
   };
 
   return (
@@ -44,18 +44,18 @@ export default function Cart() {
       ) : (
         <div className="flex flex-col gap-4">
           {cart.map((item) => (
-            <div key={item.product.id} className="flex justify-between items-center border-b pb-4">
+            <div key={item.product.slug_product} className="flex justify-between items-center border-b pb-4">
               <div className="flex items-center gap-4">
-                <img src={item.product.image} alt={item.product.name} className="w-16 h-16 rounded-lg object-cover" />
+                <img src={item.product.img} alt={item.product.name_product} className="w-16 h-16 rounded-lg object-cover" />
                 <div>
-                  <p className="font-medium text-[#1a1a1a]">{item.product.name}</p>
+                  <p className="font-medium text-[#1a1a1a]">{item.product.name_product}</p>
                   <small className="text-[#6c757d]">Cantidad: {item.quantity}</small>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <span className="font-semibold text-[#1a1a1a]">${(item.product.price * item.quantity).toLocaleString()}</span>
+                <span className="font-semibold text-[#1a1a1a]">${(item.product.precio * item.quantity).toLocaleString()}</span>
                 <button
-                  onClick={() => removeItem(item.product.id)}
+                  onClick={() => removeItem(item.product.slug_product)}
                   className="text-[#d90429] hover:underline text-sm"
                 >
                   Eliminar
