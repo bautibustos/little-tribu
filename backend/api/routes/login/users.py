@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-import bcrypt
+import bcrypt, datetime
 from db.connection import get_connection
 from api.schemas.user import LoginRequest, User
 
@@ -57,11 +57,22 @@ def login(data: LoginRequest):
 
 @router.post("/registro")
 def registrar_usuario(data: User):
-    contrasenia_hasheada = hash_password(password= data.pwd)
-    with get_connection() as conn:
-        with conn.cursor() as cursor:
-            cursor.execute("INSERT IN TO USERS(id_user, name, email, pwd, rol, is_active, creation_time)")
-    pass
+    try:
+        contrasenia_hasheada = hash_password(password= data.pwd)
+        with get_connection() as conn:
+            with conn.cursor() as cursor:
+                cursor.execute(
+                'SELECT * FROM "USERS" WHERE email = %s',
+                (data.email,))
+                respuesta = cursor.fetchone()
+                if respuesta is not None:
+                    cursor.execute("INSERT IN TO USERS(id_user, name, email, pwd, rol, is_active, creation_time) " \
+                    "VALUES (default,%s,%s,%s, 1, true, %s)", (data.name, data.email, contrasenia_hasheada,datetime.datetime.now()))
+                    return HTTPException(status_code = 200, detail="Usuario registrado con exito")
+                else: 
+                    return HTTPException(status_code = 409, detail="El email en uso")
+    except:
+        return HTTPException(status_code = 500, detail="Se cayo el sistema")
 
 
 """
