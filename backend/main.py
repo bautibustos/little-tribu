@@ -26,7 +26,7 @@ app.add_middleware(
 app.include_router(users_router, prefix="/api/login")
 app.include_router(recovery_router, prefix="/api/recovery")
 app.include_router(products, prefix="/api")
-app.include_router(register, prefix="/registro")
+app.include_router(register, prefix="/api")
 
 
 """
