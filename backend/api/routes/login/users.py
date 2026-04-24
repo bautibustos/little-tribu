@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 import bcrypt
 from db.connection import get_connection
-from api.schemas.user import LoginRequest
+from api.schemas.user import LoginRequest, User
 
 router = APIRouter()
 
@@ -54,6 +54,15 @@ def login(data: LoginRequest):
         raise HTTPException(status_code=401, detail="Credenciales inválidas")
 
     return {"mensaje": "Login exitoso", "id_user": user["id_user"], "name": user["name"]}
+
+@router.post("/registro")
+def registrar_usuario(data: User):
+    contrasenia_hasheada = hash_password(password= data.pwd)
+    with get_connection() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute("INSERT IN TO USERS(id_user, name, email, pwd, rol, is_active, creation_time)")
+    pass
+
 
 """
 Credenciales de prueba
