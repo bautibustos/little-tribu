@@ -1,26 +1,50 @@
 {
     "0": {
-        "nombre_producto": "test",
-        "nombre_imagen": "url_imagen",
-        "precio": 1.5,
-        "descripcion": "esto es un producto de prueba"
+        "slug_product": "remera-oversize-negra",
+        "categoria": "remeras",
+        "name_product": "Remera Oversize Negra",
+        "img": "https://acdn-us.mitiendanube.com/stores/002/469/280/products/over-negra-1-a16ee507295f6a836717135699103737-640-0.webp",
+        "precio": 18500.00,
+        "description": "Remera de algodón pesado con calce holgado."
     },
     "1": {
-        "nombre_producto": "test",
-        "nombre_imagen": "url_imagen",
-        "precio": 1.5,
-        "descripcion": "esto es un producto de prueba"
+        "slug_product": "jean-mom-azul-claro",
+        "categoria": "pantalones",
+        "name_product": "Jean Mom Azul Claro",
+        "img": "https://img.ltwebstatic.com/images3_pi/2024/10/23/8f/172964888816374b5766356cacf64832fd464b9c44_thumbnail_405x.jpg",
+        "precio": 42000.00,
+        "description": "Pantalón de denim rígido tiro alto estilo vintage."
     },
     "2": {
-        "nombre_producto": "costilla",
-        "nombre_imagen": "imagennueva",
-        "precio": 2.5,
-        "descripcion": "esto es una descripcion"
+        "slug_product": "buzo-fleece-beige",
+        "categoria": "abrigos",
+        "name_product": "Buzo Fleece Beige",
+        "img": "https://acdn-us.mitiendanube.com/stores/006/376/272/products/27ec5a76-36ed-4ab6-903d-7c55cd7ff117-e9668f4c4197cf36d217545094594929-1024-1024.webp",
+        "precio": 35000.00,
+        "description": "Buzo de frisa soft con cuello redondo."
     },
     "3": {
-        "nombre_producto": "costilla",
-        "nombre_imagen": "imagennueva",
-        "precio": 2.5,
-        "descripcion": "esto es una descripcion"
+        "slug_product": "camisa-lino-blanca",
+        "categoria": "camisas",
+        "name_product": "Camisa Lino Blanca",
+        "img": "https://img.ltwebstatic.com/v4/j/pi/2025/12/19/ed/1766139218015e1d5e628c51da1843603d8f8e4b6a_thumbnail_900x.webp",
+        "precio": 29900.00,
+        "description": "Camisa de lino slim fit ideal para verano."
+    },
+    "4": {
+        "slug_product": "campera-puffer-blanca",
+        "categoria": "abrigos",
+        "name_product": "Campera Puffer blanca",
+        "img": "https://accion.coop/wp-content/uploads/2023/04/imagenprincipal.jpg",
+        "precio": 95000.00,
+        "description": "Campera inflable con relleno térmico y capucha."
+    },
+    "5": {
+        "slug_product": "short-denim-negro",
+        "categoria": "pantalones",
+        "name_product": "Short Denim Negro",
+        "img": "https://acdn-us.mitiendanube.com/stores/064/781/products/img_5243-5a2def16a94010bb7e17308874922387-480-0.webp",
+        "precio": 15600.00,
+        "description": "Short de jean negro con terminación deshilachada."
     }
 }
