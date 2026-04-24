@@ -53,7 +53,7 @@ export default function Cart() {
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <span className="font-semibold text-[#1a1a1a]">${(item.product.precio * item.quantity).toLocaleString()}</span>
+                <span className="font-semibold text-[#1a1a1a]">${(item.product.precio * item.quantity).toLocaleString("es-AR")}</span>
                 <button
                   onClick={() => removeItem(item.product.slug_product)}
                   className="text-[#d90429] hover:underline text-sm"
