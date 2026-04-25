@@ -6,7 +6,7 @@ import { CartItem } from "@/interfaces/Product";
 const initialCart: CartItem[] = [
   {
     product: {
-      slug_product: 1,
+      slug_product: "remera-blanca",
       name_product: "Remera básica blanca",
       precio: 21000,
       img: "/images/products/remera-blanca-mobile.webp",
@@ -16,7 +16,7 @@ const initialCart: CartItem[] = [
   },
   {
     product: {
-      slug_product: 2,
+      slug_product: "jeans",
       name_product: "Baggy Jeans",
       precio: 70000,
       img: "/images/products/jeans-mobile.webp",
@@ -31,7 +31,7 @@ export default function Cart() {
 
   const total = cart.reduce((acc, item) => acc + item.product.precio * item.quantity, 0);
 
-  const removeItem = (id: number) => {
+  const removeItem = (id: string) => {
     setCart(cart.filter((item) => item.product.slug_product !== id));
   };
 

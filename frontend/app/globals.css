@@ -15,4 +15,30 @@ body {
   background: var(--background);
   color: var(--text);
   font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 91.666667% !important;
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+}
+
+@utility bg-elite-banner {
+  background-color: #0a1128;
+}
+
+@utility glass {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@utility transition-smooth {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@utility text-shadow-lg {
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
