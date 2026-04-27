@@ -1,3 +1,4 @@
+import SizeSelector from "@/components/module/SizeSelector";
 import Image from "next/image";
 
 const productos: Record<string, { name_product: string; description: string; precio: number; imgDesktop: string; imgMobile: string }> = {
@@ -98,6 +99,8 @@ export default async function ProductDetail({ params }: { params: { slug: string
           <h1 className="text-3xl font-bold text-[#1a1a1a]">{product.name_product}</h1>
           <p className="text-[#6c757d]">{product.description}</p>
           <span className="text-2xl font-semibold text-[#ff4d6d]">${product.precio.toLocaleString("es-AR")}</span>
+          <SizeSelector />
+          <span className="text-2xl font-semibold text-[#ff4d6d]">${product.precio.toLocaleString()}</span>
           <button className="bg-[#ff4d6d] hover:bg-[#e63956] text-white font-medium py-3 px-6 rounded-lg transition-colors">
             Agregar al carrito
           </button>
