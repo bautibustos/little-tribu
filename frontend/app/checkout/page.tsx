@@ -6,11 +6,39 @@ export default function Checkout() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
+  const [errors, setErrors] = useState({ name: "", email: "", address: "" });
+
+  const validate = () => {
+    const newErrors = { name: "", email: "", address: "" };
+    let valid = true;
+
+    if (!name) {
+      newErrors.name = "El nombre es obligatorio";
+      valid = false;
+    }
+
+    if (!email) {
+      newErrors.email = "El email es obligatorio";
+      valid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      newErrors.email = "El email no es válido";
+      valid = false;
+    }
+
+    if (!address) {
+      newErrors.address = "La dirección es obligatoria";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validate()) return;
     console.log("Checkout con:", name, email, address);
-    // acá después conectamos con ARCA (Bauti)
+    // acá después conectamos con ARCA
   };
 
   return (
@@ -36,8 +64,15 @@ export default function Checkout() {
               placeholder="Tu nombre"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="border border-[#eee] rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#ff4d6d]/30 focus:border-[#ff4d6d] transition-all"
+              className={`border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 transition-all
+                ${errors.name
+                  ? "border-[#d90429] focus:ring-[#d90429]/30"
+                  : "border-[#eee] focus:ring-[#ff4d6d]/30 focus:border-[#ff4d6d]"
+                }`}
             />
+            {errors.name && (
+              <span className="text-[#d90429] text-xs">{errors.name}</span>
+            )}
           </div>
 
           {/* Email */}
@@ -48,8 +83,15 @@ export default function Checkout() {
               placeholder="tu@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="border border-[#eee] rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#ff4d6d]/30 focus:border-[#ff4d6d] transition-all"
+              className={`border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 transition-all
+                ${errors.email
+                  ? "border-[#d90429] focus:ring-[#d90429]/30"
+                  : "border-[#eee] focus:ring-[#ff4d6d]/30 focus:border-[#ff4d6d]"
+                }`}
             />
+            {errors.email && (
+              <span className="text-[#d90429] text-xs">{errors.email}</span>
+            )}
           </div>
 
           {/* Dirección */}
@@ -60,8 +102,15 @@ export default function Checkout() {
               placeholder="Calle, número, ciudad"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              className="border border-[#eee] rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#ff4d6d]/30 focus:border-[#ff4d6d] transition-all"
+              className={`border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 transition-all
+                ${errors.address
+                  ? "border-[#d90429] focus:ring-[#d90429]/30"
+                  : "border-[#eee] focus:ring-[#ff4d6d]/30 focus:border-[#ff4d6d]"
+                }`}
             />
+            {errors.address && (
+              <span className="text-[#d90429] text-xs">{errors.address}</span>
+            )}
           </div>
 
           {/* Botón */}
