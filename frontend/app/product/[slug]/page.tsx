@@ -100,7 +100,6 @@ export default async function ProductDetail({ params }: { params: { slug: string
           <p className="text-[#6c757d]">{product.description}</p>
           <span className="text-2xl font-semibold text-[#ff4d6d]">${product.precio.toLocaleString("es-AR")}</span>
           <SizeSelector />
-          <span className="text-2xl font-semibold text-[#ff4d6d]">${product.precio.toLocaleString()}</span>
           <button className="bg-[#ff4d6d] hover:bg-[#e63956] text-white font-medium py-3 px-6 rounded-lg transition-colors">
             Agregar al carrito
           </button>

@@ -8,7 +8,7 @@ export default function SizeSelector() {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-2">
       <label className="text-sm font-medium text-[#1a1a1a]">Talle</label>
       <div className="flex gap-2">
         {SIZES.map((size) => (
